@@ -1,5 +1,9 @@
-import anchorTag from "./anchorTag";
+import {
+  anchorTag,
+  anchorTagFile,
+} from "./anchorTag";
 
 export {
-  anchorTag
+  anchorTag,
+  anchorTagFile,
 };

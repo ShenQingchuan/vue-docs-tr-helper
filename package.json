@@ -16,7 +16,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vue-docs-tr-helper.anchor-tag"
+		"onLanguage:markdown"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -25,6 +25,10 @@
 				{
 					"command": "vue-docs-tr-helper.anchor-tag",
 					"when": "editorLangId == markdown"
+				},
+				{
+					"command": "vue-docs-tr-helper.anchor-tag-file",
+					"when": "editorLangId == markdown"
 				}
 			]
 		},
@@ -32,6 +36,10 @@
 			{
 				"command": "vue-docs-tr-helper.anchor-tag",
 				"title": "VueDocsTrHelper: Transform heading to anchor tag"
+			},
+			{
+				"command": "vue-docs-tr-helper.anchor-tag-file",
+				"title": "VueDocsTrHelper: Whole markdown file - Transform all headings to anchor tag"
 			}
 		]
 	},

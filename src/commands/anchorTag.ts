@@ -1,6 +1,9 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 
 const nonAnchorTagValidRegExp = /[^ \-a-zA-Z0-9]/g;
+const markdownHeadingRegExp = /^#{1,}\s/;
+
 function transformToAnchorTag(text: string) {
 	const pickOnlyValid = text.replace(nonAnchorTagValidRegExp, '');
 	return `{#${
@@ -12,9 +15,13 @@ function transformToAnchorTag(text: string) {
 	}}`;
 }
 
-export default function() {
-	// The code you place here will be executed every time your command is executed
-	// Display a message box to the user
+/**
+ * Replace selections' text to a valid anchor-tag form.
+ * 
+ * - Before: `### Functions definition"`
+ * - After: `### Functoins definition {#functions-definition}`
+ */
+export const anchorTag = () => {
 	const textEditor = vscode.window.activeTextEditor;
 	
 	if (textEditor) {
@@ -31,4 +38,29 @@ export default function() {
 			});
 		});
 	}
-}
+};
+
+/**
+ * Replace all headings' text to valid anchor-tag form in a markdown file.
+ */
+export const anchorTagFile = async () => {
+	const textEditor = vscode.window.activeTextEditor;
+	if (!textEditor) {
+		return;
+	}
+
+	const doc = textEditor.document;
+	for (let i = 0; i < doc.lineCount; i++) {
+		const line = doc.lineAt(i);
+		const lineText = line.text;
+		if (markdownHeadingRegExp.test(line.text)) {
+			const anchorTagText = transformToAnchorTag(lineText);
+			await textEditor.edit((editBuilder) => {
+				editBuilder.replace(
+					line.range,
+					`${lineText} ${anchorTagText}`
+				);
+			});
+		}
+	}
+};
