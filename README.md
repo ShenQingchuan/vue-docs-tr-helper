@@ -58,7 +58,7 @@ Initial release of Vue-docs-tr-helper.
 
 Provide commands:
  - `anchor-tag`: replace selection text to a valid anchor tag form.
- - (WIP) `anchor-tag-file`: replace all headings of a markdown file to valid anchor tags form.
+ - `anchor-tag-file`: replace all headings of a markdown file to valid anchor tags form.
 
 -----
 ## Following extension guidelines
