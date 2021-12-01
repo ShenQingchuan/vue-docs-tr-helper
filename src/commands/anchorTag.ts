@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as path from 'path';
 
 const nonAnchorTagValidRegExp = /[^ \-a-zA-Z0-9]/g;
 const markdownHeadingRegExp = /^#{1,}\s/;
@@ -60,6 +59,9 @@ export const anchorTagFile = async () => {
 					line.range,
 					`${lineText} ${anchorTagText}`
 				);
+			}, { // makes this edit as one batched step
+				undoStopBefore: i === 0,
+				undoStopAfter: i === doc.lineCount - 1
 			});
 		}
 	}

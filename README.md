@@ -22,6 +22,10 @@ We've found a solution in VuePress/VitePress for this problem, for the foreseeab
 ## `v-if` in `<template>` {#v-if-in-template}
 ```
 
+![anchorTag](https://user-images.githubusercontent.com/46062972/144283969-5e816f9a-a1b4-44ca-9ff4-5a46420c795f.gif)
+
+![anchorTagFile](https://user-images.githubusercontent.com/46062972/144282770-bde3ba23-ec65-4259-bedf-37ba64d447fd.gif)
+
 ## Requirements
 
 Nothing for now.
