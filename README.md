@@ -26,6 +26,10 @@ We've found a solution in VuePress/VitePress for this problem, for the foreseeab
 
 ![anchorTagFile](https://user-images.githubusercontent.com/46062972/144282770-bde3ba23-ec65-4259-bedf-37ba64d447fd.gif)
 
+### query for English source
+
+![source](https://user-images.githubusercontent.com/46062972/144469500-1dcf7627-a825-446f-ad41-ad7d4df00093.png)
+
 ## Requirements
 
 Nothing for now.
@@ -63,6 +67,10 @@ Initial release of Vue-docs-tr-helper.
 Provide commands:
  - `anchor-tag`: replace selection text to a valid anchor tag form.
  - `anchor-tag-file`: replace all headings of a markdown file to valid anchor tags form.
+
+### 0.0.5
+
+Provide English source content when mouse pointer hover on a line. (only in markdown files)
 
 -----
 ## Following extension guidelines
