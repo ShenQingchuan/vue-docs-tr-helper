@@ -32,7 +32,7 @@ We've found a solution in VuePress/VitePress for this problem, for the foreseeab
 
 ## Requirements
 
-Nothing for now.
+- If you are a Chinese mainland user, maybe you need a system level proxy (VPN) to access `https://raw.githubusercontent.com`.
 
 <!-- If you have any requirements or dependencies, add a section describing those and how to install and configure them. -->
 
