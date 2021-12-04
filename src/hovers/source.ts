@@ -40,8 +40,14 @@ export const registerHoverSource = () => vscode.languages.registerHoverProvider(
         const rawSource: string = await getRawContentSource(rawContentUrl);
         const allLines = rawSource.split(lineSeperator);
         sourceCaches.set(relativePath, allLines);
+        if (position.line >= allLines.length) {
+          return;
+        }
         lineSource = allLines[position.line];
       } else {
+        if (position.line >= alreadyCached.length) {
+          return;
+        }
         lineSource = alreadyCached[position.line];
       }
       return new vscode.Hover(
