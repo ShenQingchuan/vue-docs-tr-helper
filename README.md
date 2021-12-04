@@ -60,7 +60,7 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
-### 0.0.6
+### 0.0.7
 
 - Fix array access out of bounds problem of fetching English source.
 - make this extension activating manually (instead of `onLanguage:markdown`).
