@@ -60,6 +60,15 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
+### 0.0.6
+
+- Fix array access out of bounds problem of fetching English source.
+- make this extension activating manually (instead of `onLanguage:markdown`).
+
+### 0.0.5
+
+Provide English source content when mouse pointer hover on a line. (only in markdown files)
+
 ### 0.0.1
 
 Initial release of Vue-docs-tr-helper.
@@ -67,10 +76,6 @@ Initial release of Vue-docs-tr-helper.
 Provide commands:
  - `anchor-tag`: replace selection text to a valid anchor tag form.
  - `anchor-tag-file`: replace all headings of a markdown file to valid anchor tags form.
-
-### 0.0.5
-
-Provide English source content when mouse pointer hover on a line. (only in markdown files)
 
 -----
 ## Following extension guidelines

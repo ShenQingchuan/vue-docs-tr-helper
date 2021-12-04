@@ -16,7 +16,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:markdown"
+		"onCommand:vue-docs-tr-helper.activate"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -33,6 +33,10 @@
 			]
 		},
 		"commands": [
+			{
+				"command": "vue-docs-tr-helper.activate",
+				"title": "VueDocsTrHelper: Activate"
+			},
 			{
 				"command": "vue-docs-tr-helper.anchor-tag",
 				"title": "VueDocsTrHelper: Transform heading to anchor tag"
