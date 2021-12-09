@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-const nonAnchorTagValidRegExp = /[^ \-a-zA-Z0-9]/g;
+const nonAnchorTagValidRegExp = /(<\/?(\S+)>)|[^ \-a-zA-Z0-9]/g;
 const markdownHeadingRegExp = /^#{1,}\s/;
 
 function transformToAnchorTag(text: string) {

@@ -60,6 +60,10 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
+### 0.0.10
+
+- Fix anchor tag transforming issue with header containing HTML tags.
+
 ### 0.0.7
 
 - Fix array access out of bounds problem of fetching English source.
