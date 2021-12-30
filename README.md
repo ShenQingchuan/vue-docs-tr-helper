@@ -60,9 +60,13 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
+# 0.0.11
+
+- Fix anchor tag transforming issue with header containing HTML tags. - rewrite the RegExp replace method.
+
 ### 0.0.10
 
-- Fix anchor tag transforming issue with header containing HTML tags.
+- Fix anchor tag transforming issue with header containing HTML tags. - avoid removing texts inside tags like ``useage of `<template>` expression``
 
 ### 0.0.7
 

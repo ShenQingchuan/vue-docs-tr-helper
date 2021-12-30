@@ -1,12 +1,14 @@
 import * as vscode from 'vscode';
 
-const nonAnchorTagValidRegExp = /(<\/?(\S+)>)|[^ \-a-zA-Z0-9]/g;
+const invalidAnchorTagCharRegExp = /[^ \-a-zA-Z0-9]/g;
+const htmlTagRegExp = /[^`]<.+\s\/>[^`]/g;
 const markdownHeadingRegExp = /^#{1,}\s/;
 
 function transformToAnchorTag(text: string) {
-	const pickOnlyValid = text.replace(nonAnchorTagValidRegExp, '');
+	const removedHtmlTag = text.replace(htmlTagRegExp, '');
+	const keepOnlyValid = removedHtmlTag.replace(invalidAnchorTagCharRegExp, '');
 	return `{#${
-		pickOnlyValid
+		keepOnlyValid
 			.toLowerCase()
 			.split(' ')
 			.filter(str => str !== '')
