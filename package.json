@@ -16,7 +16,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vue-docs-tr-helper.activate"
+		"onCommand:vue-docs-tr-helper.activate",
+		"onCommand:vue-docs-tr-helper.anchor-tag",
+		"onCommand:vue-docs-tr-helper.anchor-tag-file"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
