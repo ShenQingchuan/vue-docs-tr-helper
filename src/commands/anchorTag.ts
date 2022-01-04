@@ -3,11 +3,16 @@ import * as vscode from 'vscode';
 const invalidAnchorTagCharRegExp = /[^ \-a-zA-Z0-9]/g;
 const htmlTagRegExp = /[^`]<.+\s\/>[^`]/g;
 const markdownHeadingRegExp = /^#{1,}\s/;
+const anchorTagRegExp = /\{#[a-zA-Z0-9\-]+\}/g;
 
-function transformToAnchorTag(text: string) {
+function transformToAnchorTag(text: string): string {
+	const foundAnchorTagAlreadyExist = anchorTagRegExp.test(text);
+	if (foundAnchorTagAlreadyExist) {
+		return '';
+	}
 	const removedHtmlTag = text.replace(htmlTagRegExp, '');
 	const keepOnlyValid = removedHtmlTag.replace(invalidAnchorTagCharRegExp, '');
-	return `{#${
+	return ` {#${
 		keepOnlyValid
 			.toLowerCase()
 			.split(' ')
@@ -34,7 +39,7 @@ export const anchorTag = () => {
 				);
 				editBuilder.replace(
 					selection,
-					`${selectionText} ${anchorTagText}`
+					`${selectionText}${anchorTagText}`
 				);
 			});
 		});

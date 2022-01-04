@@ -60,6 +60,10 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
+# 0.0.12
+
+- Fix anchor tag transforming issue with header containing HTML tags. - doesn't append tag while it already exists.
+
 # 0.0.11
 
 - Fix anchor tag transforming issue with header containing HTML tags. - rewrite the RegExp replace method.
