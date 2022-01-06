@@ -44,7 +44,13 @@ We've found a solution in VuePress/VitePress for this problem, for the foreseeab
 
 ## Extension Settings
 
-Nothing for now.
+- `vue-docs-tr-helper:github-repo-branch`: Vue.js official documentation github repo branch.
+
+    default: `next`
+
+- `vue-docs-tr-helper:github-repo-name`: Vue.js official documentation github repo name.
+
+    default: `vuejs/docs`
 
 <!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
