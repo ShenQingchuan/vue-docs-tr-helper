@@ -2,6 +2,12 @@
 
 Here is Vue documentation traslation helper! it will provide you useful commands for translation editing.
 
+## Activate
+
+![image](https://user-images.githubusercontent.com/46062972/148327171-07a4a096-d97b-459f-9b92-ff0498064e3e.png)
+
+Actually all commands provided by this extension can trigger `activate` events now.
+
 ## Features
 
 ### anchor tag transform
