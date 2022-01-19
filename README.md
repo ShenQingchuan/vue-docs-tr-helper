@@ -72,6 +72,10 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
+### 0.0.14
+
+- Feature: No need to select a part of the line text to run the `anchorTag` command, it'll automatically apply to the current cursor line.
+  
 ### 0.0.13
 
 - Fix: trigger activation automatically when using anchor tag commands.

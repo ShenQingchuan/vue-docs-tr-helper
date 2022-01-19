@@ -6,8 +6,8 @@ const markdownHeadingRegExp = /^#{1,}\s/;
 const anchorTagRegExp = /\{#[a-zA-Z0-9\-]+\}/g;
 
 function transformToAnchorTag(text: string): string {
-	const foundAnchorTagAlreadyExist = anchorTagRegExp.test(text);
-	if (foundAnchorTagAlreadyExist) {
+	const matchedExistedTag = text.match(anchorTagRegExp);
+	if (matchedExistedTag && matchedExistedTag.length > 0) {
 		return '';
 	}
 	const removedHtmlTag = text.replace(htmlTagRegExp, '');
@@ -27,21 +27,30 @@ function transformToAnchorTag(text: string): string {
  * - Before: `### Functions definition"`
  * - After: `### Functoins definition {#functions-definition}`
  */
-export const anchorTag = () => {
+ export const anchorTag = () => {
 	const textEditor = vscode.window.activeTextEditor;
 	
 	if (textEditor) {
 		textEditor.edit((editBuilder) => {
-			textEditor.selections.forEach((selection) => {
-				const selectionText = textEditor.document.getText(selection);
-				const anchorTagText = transformToAnchorTag(
-					textEditor.document.getText(selection)
-				);
+			if (textEditor.selection.isEmpty) {
+				const currentLine = textEditor.document.lineAt(textEditor.selection.start);
+				const anchorTagText = transformToAnchorTag(currentLine.text);
 				editBuilder.replace(
-					selection,
-					`${selectionText}${anchorTagText}`
+					currentLine.range,
+					`${currentLine.text}${anchorTagText}`
 				);
-			});
+			} else {
+				textEditor.selections.forEach((selection) => {
+					const selectionText = textEditor.document.getText(selection);
+					const anchorTagText = transformToAnchorTag(
+						textEditor.document.getText(selection)
+					);
+					editBuilder.replace(
+						selection,
+						`${selectionText}${anchorTagText}`
+					);
+				});
+			}
 		});
 	}
 };
