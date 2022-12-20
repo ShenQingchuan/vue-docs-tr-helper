@@ -44,13 +44,14 @@ We've found a solution in VuePress/VitePress for this problem, for the foreseeab
 
 ## Extension Settings
 
+- `vue-docs-tr-helper:github-repo-name`: Vue.js official documentation github repo name.
+
+    default: `vuejs/docs`
+
 - `vue-docs-tr-helper:github-repo-branch`: Vue.js official documentation github repo branch.
 
     default: `next`
 
-- `vue-docs-tr-helper:github-repo-name`: Vue.js official documentation github repo name.
-
-    default: `vuejs/docs`
 
 <!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -72,30 +73,12 @@ Nothing for now.
 
 <!-- Users appreciate release notes as you update your extension. -->
 
-### 0.0.14
-
-- Feature: No need to select a part of the line text to run the `anchorTag` command, it'll automatically apply to the current cursor line.
-  
-### 0.0.13
-
-- Fix: trigger activation automatically when using anchor tag commands.
-
-### 0.0.12
-
-- Fix anchor tag transforming issue with header containing HTML tags. - doesn't append tag while it already exists.
-
-### 0.0.11
+### 0.0.7 - 0.0.11
 
 - Fix anchor tag transforming issue with header containing HTML tags. - rewrite the RegExp replace method.
-
-### 0.0.10
-
 - Fix anchor tag transforming issue with header containing HTML tags. - avoid removing texts inside tags like ``useage of `<template>` expression``
-
-### 0.0.7
-
 - Fix array access out of bounds problem of fetching English source.
-- make this extension activating manually (instead of `onLanguage:markdown`).
+- make this extension activate on command call (instead of `onLanguage:markdown`).
 
 ### 0.0.5
 

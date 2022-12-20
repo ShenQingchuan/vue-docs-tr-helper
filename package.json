@@ -2,7 +2,7 @@
 	"name": "vue-docs-tr-helper",
 	"displayName": "vue-docs-tr-helper",
 	"description": "Vue docs translation helper plugin in VSCode.",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -45,7 +45,7 @@
 			},
 			{
 				"command": "vue-docs-tr-helper.anchor-tag-file",
-				"title": "VueDocsTrHelper: Whole markdown file - Transform all headings to anchor tag"
+				"title": "VueDocsTrHelper: Whole markdown file - Make all headings append anchor tag"
 			}
 		],
 		"configuration": [

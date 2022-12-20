@@ -73,7 +73,7 @@ export const anchorTagFile = async () => {
 			await textEditor.edit((editBuilder) => {
 				editBuilder.replace(
 					line.range,
-					`${lineText} ${anchorTagText}`
+					`${lineText}${anchorTagText}`
 				);
 			}, { // makes this edit as one batched step
 				undoStopBefore: i === 0,
