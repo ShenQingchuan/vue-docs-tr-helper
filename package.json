@@ -2,7 +2,7 @@
 	"name": "vue-docs-tr-helper",
 	"displayName": "vue-docs-tr-helper",
 	"description": "Vue docs translation helper plugin in VSCode.",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
